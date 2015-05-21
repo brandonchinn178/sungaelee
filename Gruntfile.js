@@ -10,7 +10,7 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: "sungaelee/static/sass",
+                    cwd: "sungaelee/static/scss",
                     src: "**/*.scss",
                     dest: "sungaelee/static/css",
                     ext: ".css"
@@ -26,4 +26,5 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask("build", ["sass"]);
+    grunt.registerTask("default", ["build", "watch"]);
 };
