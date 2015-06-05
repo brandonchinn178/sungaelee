@@ -7,6 +7,7 @@
 
 {% block content %}
     <form class="login-form" method="post">
+        {% csrf_token %}
         <div class="username field">
             <label>Username:</label>
             {{ form.username }}
@@ -15,6 +16,7 @@
             <label>Password:</label>
             {{ form.password }}
         </div>
+        <input type="hidden" name="next" value="{{ next }}">
         <button class="login-button">Login</button>
     </form>
 {% endblock %}
