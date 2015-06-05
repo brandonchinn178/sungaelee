@@ -1,7 +1,7 @@
 import os
 import sys
 
-BASE_COMMAND = "vagrant ssh -c 'source ~/venv/bin/activate; cd /vagrant/sungaelee && %s'"
+BASE_COMMAND = 'vagrant ssh -c "source ~/venv/bin/activate; cd /vagrant/sungaelee && %s"'
 
 
 def print_and_run_system(cmd):

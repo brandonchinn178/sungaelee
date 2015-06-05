@@ -36,4 +36,9 @@ Vagrant.configure("2") do |config|
 	config.vm.provider "virtualbox" do |vb|
 	    vb.customize [ "guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000 ]
 	end
+
+	# Enable symlinks on Windows (needed for npm)
+    config.vm.provider "virtualbox" do |v|
+        v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+    end
 end
