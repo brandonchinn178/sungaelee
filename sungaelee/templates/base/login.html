@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base/login.css' %}">
+{% endblock %}
+
+{% block content %}
+    <form class="login-form" method="post">
+        <div class="username field">
+            <label>Username:</label>
+            {{ form.username }}
+        </div>
+        <div class="password field">
+            <label>Password:</label>
+            {{ form.password }}
+        </div>
+        <button class="login-button">Login</button>
+    </form>
+{% endblock %}
