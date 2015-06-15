@@ -36,6 +36,9 @@ header {
     a {
         text-decoration: none;
         color: $theme-black;
+        &:hover {
+            border-bottom: 1px solid $theme-black;
+        }
     }
     h1 {
         margin-right: 10px;
@@ -44,6 +47,9 @@ header {
         a {
             font-family: "Cinzel Decorative", cursive;
             font-size: 60px;
+            &:hover {
+                border-bottom: none;
+            }
         }
     }
     nav {
@@ -56,10 +62,16 @@ header {
             width: 90px;
             margin: 5px 0;
             display: inline-block;
-            a:hover {
-                border-bottom: 1px solid $theme-black;
-            }
         }
+    }
+    .login-link {
+        position: absolute;
+        padding: 5px 20px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: right;
+        font-size: 14px;
     }
 }
 

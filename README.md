@@ -18,3 +18,4 @@ Designing a new website for Dr. SungAe Lee, which will be used for event announc
 ## Running
 1. `python vmanage.py runserver`
 2. Go to `http://localhost:8000`
+3. To view the admin page, create a superuser with `python vmanage.py createsuperuser`
