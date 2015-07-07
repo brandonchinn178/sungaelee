@@ -15,4 +15,4 @@ Designing a new website for Dr. SungAe Lee, which will be used for event announc
 2. `grunt build` to compile the SASS code into the CSS files needed for the HTML pages
 
 ## Running
-1. Go to `http://localhost:8080`
+1. Go to `http://localhost:8888`

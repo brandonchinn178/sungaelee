@@ -59,13 +59,15 @@ header {
             }
         }
     }
-    nav {
+    .menu {
+        margin: 0;
+        padding: 0;
         font-size: 18px;
         font-weight: 400;
         width: 200px;
         display: inline-block;
         vertical-align: middle;
-        .nav-item {
+        .menu-item {
             width: 90px;
             margin: 5px 0;
             display: inline-block;
