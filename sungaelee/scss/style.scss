@@ -1,0 +1,286 @@
+/*
+    Theme Name: CalBand-2015
+    Description: 2015 design for the Cal Band Website
+    Version: 1.0
+    Author: CompComm
+*/
+
+/* ===== GENERAL ===== */
+
+html, body {
+    min-width: 1250px;
+    height: 100%;
+}
+
+div, header, footer, p, a, ul, li {
+    /* Includes padding in height/width calculations */
+    box-sizing: border-box;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+i {
+    font-style: italic;
+}
+
+u {
+    text-decoration: underline;
+}
+
+header {
+    position: relative;
+    padding: 10px 25px;
+    height: 100px;
+    background: #102B55;
+    color: #fff;
+    z-index: 10;
+    &:before {
+        content: "";
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+    img.highstepper {
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+        margin: 0 15px;
+    }
+    h1 {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 15px;
+        font-family: "Trajan Pro", Times, serif;
+        letter-spacing: 1px;
+        div {
+            font-size: 40px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            &.top {
+                border-bottom: 1px solid #fff;
+                padding-bottom: 5px;
+                font-size: 15px;
+            }
+            &.bottom {
+                padding-top: 18px;
+                font-size: 31px;
+                line-height: 0.8em;
+            }
+        }
+    }
+    .nav {
+        display: inline-block;
+        float: right;
+        font: 14px "Open Sans", Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        a {
+            margin: 3px 0;
+            display: block;
+            text-align: right;
+            &:hover {
+                color: #ffef42;
+            }
+        }
+    }
+}
+
+nav {
+    position: relative;
+    background: rgb(20,179,218);
+    z-index: 10;
+    a {
+        font-family: "Din", Helvetica, Arial, sans-serif;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+    .menu {
+        width: 100%;
+        padding: 0 30px;
+        & > li {
+            position: relative;
+            width: 16.3%;
+            display: inline-block;
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            a {
+                /* Manually adjust vertical centering */
+                padding-top: 20px;
+                line-height: 0.5em;
+                &:hover {
+                    background: rgba(255,255,255,0.3);
+                }
+            }
+            &:hover .sub-menu {
+                display: initial;
+            }
+        }
+        li.current_page_item, li.current_page_parent {
+            background: #1f5d8a;
+            & > a {
+                color: #fff;
+            }
+        }
+    }
+    .sub-menu {
+        position: absolute;
+        text-transform: none;
+        display: none;
+        width: 100%;
+        left: 0;
+        background: rgba(250,250,250,0.9);
+        & > li a {
+            line-height: initial;
+            color: #102B55;
+            font-size: 20px;
+            font-weight: normal;
+        }
+    }
+}
+
+.container {
+    position: relative;
+    height: calc(100% - 177px);
+    .sidebar {
+        float: right;
+        width: 300px;
+        height: 100%;
+        margin-left: 20px;
+        overflow: hidden;
+        img {
+            height: 100%;
+        }
+    }
+    .content {
+        height: 100%;
+        overflow-y: scroll;
+        padding: 20px 40px;
+        font-size: 20px;
+        font-family: "Georgia";
+        h1, h2, h3 {
+            font-size: 20px;
+            display: block;
+            font-weight: bold;
+        }
+        h1 {
+            border-bottom: 1px solid #CCC;
+            padding-bottom: 20px;
+        }
+        p {
+            margin: 20px 0;
+            line-height: 1.5em;
+        }
+    }
+}
+
+footer {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    bottom: 20px;
+    background: rgba(10,31,63,0.9);
+    padding: 10px 20px;
+    z-index: 100;
+
+    .icon {
+        margin: 0 2px;
+        img {
+            height: 50px;
+            vertical-align: text-bottom;
+            opacity: 0.7;
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+}
+
+
+/**
+ * The following style is included to make old calband.berkeley.edu
+ * text pages render correctly on the new site.
+ * We will want to remove this eventually.
+ */
+
+.note { 
+    border: 1px solid rgb(255, 204, 0); 
+    background-color: rgb(255, 244, 204); 
+    padding: 6px; width: auto;
+}
+
+img.float-right {
+    float: right;
+    margin-left: 15px;
+}
+
+img.float-left {
+    float: left;
+    margin-right: 15px;
+}
+
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+
+div.excomm {
+    background-color: #FCFCF8;
+    border: 1px solid #CCC;
+    padding: 10px;
+    margin-top: 20px;
+}
+.signature {
+    font-family: Georgia, Garamond, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.alignright {float:right; }
+.alignleft {float:left; }
+.aligncenter {display: block; margin-left: auto; margin-right: auto}
+
+.name {
+    font-weight: bold;
+}
+
+.photo {
+    margin-bottom: 10px;
+    line-height: 110%;
+    font-style: italic;
+}
+.photo img {
+    margin-bottom: 0 !important;
+    border: 1px solid #DDD;
+}
+
+.indent {
+    text-indent: 3em;
+}
+
+.lyrics {
+    font-style: italic;
+}
+
+.date {
+    font-weight: bold;
+}
+
+.error {
+    color: #FF0000;
+}
+
+tr.canceled td {
+    text-decoration: line-through;
+}
+
+body.hsbd2004 td {
+    vertical-align: top;
+}

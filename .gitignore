@@ -4,9 +4,5 @@ venv/
 .vagrant/
 node_modules/
 .sass-cache
-# Remove all CSS files from CSS directory..
-sungaelee/static/css/**/*.css
-# ... except CSS files in the vendor/ and fonts/ directories
-!sungaelee/static/css/vendor/**/*.css
-!sungaelee/static/css/fonts/**/*.css
-.env
+*.css
+*.css.map

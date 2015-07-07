@@ -10,16 +10,16 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: "sungaelee/static/scss",
-                    src: "**/*.scss",
-                    dest: "sungaelee/static/css",
+                    cwd: "sungaelee/scss",
+                    src: "*.scss",
+                    dest: "sungaelee",
                     ext: ".css"
                 }]
             }
         },
         watch: {
             sass: {
-                files: "sungaelee/static/scss/**/*.scss",
+                files: "sungaelee/scss/*.scss",
                 tasks: "sass"
             }
         }

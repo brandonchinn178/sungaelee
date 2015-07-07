@@ -11,11 +11,8 @@ Designing a new website for Dr. SungAe Lee, which will be used for event announc
 5. Install ruby and sass. For Ubuntu users you can run 'sudo apt-get install rubygems-integration', and then run 'sudo gem install sass'.
 
 ## Building
-1. `vagrant up --provision` to install python and postgres, set up the correct database credentials, and install django and all other pip dependencies
+1. `vagrant up --provision` to install Wordpress, PHP, MySQL, and other dependencies on the Vagrant server
 2. `grunt build` to compile the SASS code into the CSS files needed for the HTML pages
-3. `python vmanage.py migrate` to migrate Django migrations
 
 ## Running
-1. `python vmanage.py runserver`
-2. Go to `http://localhost:8000`
-3. To view the admin page, create a superuser with `python vmanage.py createsuperuser`
+1. Go to `http://localhost:8080`
