@@ -5,9 +5,6 @@ module.exports = function (grunt) {
     grunt.initConfig({
         sass: {
             dist: {
-                options: {
-                    style: 'compressed'
-                },
                 files: [{
                     expand: true,
                     cwd: "sungaelee/scss",
