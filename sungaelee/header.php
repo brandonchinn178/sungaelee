@@ -3,37 +3,28 @@
     <head>
         <meta charset="<?php bloginfo('charset'); ?>" />
         <title><?php page_title(); ?></title>
-        <link rel="icon" type="image/png" href="<?php bloginfo('template_directory'); ?>/img/favicon.png" />
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/reset.css" />
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/fonts.css" />
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
-        <?php wp_head(); ?>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cinzel+Decorative">
+        <?php wp_header(); ?>
     </head>
     <body>
-        <header>
-            <img class="highstepper" src="<?php bloginfo('template_directory'); ?>/img/calband-highstepper.png">
-            <h1>
-                <a href="<?php bloginfo('url'); ?>">
-                    <div class="top">The University of California</div>
-                    <div class="bottom">Marching Band</div>
-                </a>
-            </h1>
-            <!-- The nav bar containing Members/Alumni/Parents/Contact -->
-            <?php
-                wp_nav_menu(array(
-                    'container_class' => 'nav',
-                    'theme_location' => 'external',
-                ));
-            ?>
-        </header>
-
-        <?php
-            wp_nav_menu(array(
-                'container' => 'nav',
-                'theme_location' => 'internal',
-            ));
-        ?>
-
         <div class="container">
-            <?php get_sidebar(); ?>
+            <header>
+                <h1><a href="<?php bloginfo('url'); ?>">Dr. Sungae Lee</a></h1>
+                <nav>
+                    <div class="nav-item">
+                        <a href="#">About</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">Events</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">Media</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">Lectures</a>
+                    </div>
+                </nav>
+            </header>
             <div class="content">
