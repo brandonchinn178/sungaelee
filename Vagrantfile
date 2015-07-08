@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder ".", "/vagrant", :mount_options => ["dmode=777","fmode=666"]
     
     # Enable provisioning with a shell script.
-    config.vm.provision :shell, :path => "vagrant/install.sh"
+    config.vm.provision :shell, :path => "vagrant/install.sh", :privileged => false
 
     # sync times
     config.vm.provider "virtualbox" do |vb|
