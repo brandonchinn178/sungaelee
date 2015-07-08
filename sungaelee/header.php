@@ -29,4 +29,4 @@
                     ?>
                 </div>
             </header>
-            <div class="content <?php echo strtolower(get_page_title()); ?>">
+            <div class="content <?php echo get_page_title(); ?>">

@@ -11,9 +11,9 @@ function page_title() {
 
         if ( ($id = get_query_var('cat')) != '' ) {
             echo get_category($id)->name;
-        } else if ( ($id = get_query_var('page_id')) != '' ) {
-            echo get_post($id)->post_title;
-        } 
+        } else {
+            echo get_post()->post_title;
+        }
     }
 }
 
@@ -32,7 +32,7 @@ function add_style($path) {
 /* Adds any necessary tags to the <head> section */
 function add_to_head() {
     add_script('/vendor/jquery-2.1.4.min.js');
-    switch (strtolower(get_page_title())) {
+    switch (get_page_title()) {
         case 'events':
             add_script('vendor/moment.min.js');
             add_script('vendor/fullcalendar.min.js');
@@ -45,15 +45,17 @@ function add_to_head() {
 /* Gets the page title for the current page */
 function get_page_title() {
     if (get_post(get_query_var('page_id'))->post_name == 'about') {
-        return 'About';
+        return 'about';
     } else if (get_category(get_query_var('cat'))->slug == 'events') {
-        return 'Events';
+        return 'events';
     } else if (get_post(get_query_var('page_id'))->post_name == 'media') {
-        return 'Media';
+        return 'media';
     } else if (get_post(get_query_var('page_id'))->post_name == 'lectures') {
-        return 'Lectures';
+        return 'lectures';
+    } else if (get_query_var('p') != '') {
+        return 'single-post';
     } else {
-        return 'Other';
+        return 'other';
     }
 }
 
