@@ -1,10 +1,8 @@
 <?php get_header(); ?>
 
-<h1>About</h1>
+<?php $page = get_post(); ?>
 
-<?php
-    $page = get_page_by_title( 'About' );
-    echo apply_filters( 'the_content', $page->post_content );
-?>
+<h1><?php echo apply_filters( 'the_title', $page->post_title ); ?></h1>
+<?php echo apply_filters( 'the_content', $page->post_content ); ?>
 
 <?php get_footer(); ?>
