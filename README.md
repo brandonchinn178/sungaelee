@@ -32,7 +32,7 @@ Even though most of the setting up occurs in the provisioning of the Vagrant mac
 
     Also, use the following settings for this field group:
 
-    - Rules: Post Category is equal to Event
+    - Rules: Post Category is equal to Events
 
 ## Running
 1. Go to `http://localhost:8888`

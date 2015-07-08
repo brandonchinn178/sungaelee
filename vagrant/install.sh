@@ -46,23 +46,23 @@ echo -e "\nSetting up site..."
 # activate theme
 wp theme activate sungaelee
 
-# pages
-wp post delete $(wp post list --post_type=page --format=ids)
-wp post create --post_type=page --post_title=About --post_content="This is the about page." --post_status=publish
-wp post create --post_type=page --post_title=Events --post_content="This is the events page." --post_status=publish
-wp post create --post_type=page --post_title=Media --post_content="This is the media page." --post_status=publish
-wp post create --post_type=page --post_title=Lectures --post_content="This is the lectures page." --post_status=publish
-
-# posts
-wp term create category Event --description="An event announcement"
-wp term create category Lecture --description="A Lecture and its details"
+wp post delete $(wp post list --post_type=page --field=ID)
 
 # menus
 wp menu create my-menu
 wp menu location assign my-menu primary
-for id in $(wp post list --post_type=page --format=ids --order=ASC); do
-    wp menu item add-post my-menu $id
-done
+wp menu item add-post my-menu $(
+    wp post create --post_type=page --post_title=About --post_content="This is the about page." --post_status=publish --porcelain
+)
+wp menu item add-term my-menu category $(
+    wp term create category Events --description="Event announcements" --porcelain
+)
+wp menu item add-post my-menu $(
+    wp post create --post_type=page --post_title=Media --post_content="This is the media page." --post_status=publish --porcelain
+)
+wp menu item add-post my-menu $(
+    wp term create category Lectures --description="Lectures" --porcelain
+)
 
 # spots plugin
 wp plugin install spots --activate

@@ -2,8 +2,9 @@ $(document).ready(function() {
     var allEvents = [];
     $(".event").each(function() {
         allEvents.push({
-            title: $(this).children(".title").text(),
-            start: $(this).children(".date").data('date')
+            title: $(this).find(".title a").text(),
+            start: $(this).children(".date").data('date'),
+            url: $(this).data("permalink")
         });
     });
 

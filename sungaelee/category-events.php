@@ -5,7 +5,7 @@
 
     <?php
         $query = new WP_Query(array(
-            'category_name' => 'event',
+            'category_name' => 'events',
             'meta_query' => array(
                 array(
                     'key'     => 'date',
