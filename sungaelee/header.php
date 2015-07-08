@@ -17,5 +17,15 @@
                         'theme_location' => 'primary'
                     ));
                 ?>
+                <div class="login-link">
+                    <?php
+                        if (is_user_logged_in()) {
+                            echo '<a href="'. admin_url() . '">Admin Site</a>';
+                            echo '<a href="'. wp_logout_url() . '">Logout</a>';
+                        } else {
+                            echo '<a href="'. wp_login_url() . '">Login</a>';
+                        }
+                    ?>
+                </div>
             </header>
             <div class="content">

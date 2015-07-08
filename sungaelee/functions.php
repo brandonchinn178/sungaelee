@@ -8,4 +8,6 @@ function page_title() {
     echo "Dr. Sungae Lee";
 }
 
+add_filter('show_admin_bar', '__return_false');
+
 ?>
