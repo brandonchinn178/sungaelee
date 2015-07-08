@@ -24,14 +24,16 @@
     ?>
 
     <div class="event" data-permalink="<?php echo get_permalink(); ?>">
+        <?php $date = DateTime::createFromFormat('Ymd', get_field('date')); ?>
         <h2 class="title">
             <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+            <span class="date" data-date="<?php echo $date->format('Y-m-d'); ?>">
+                <?php echo $date->format('M j, Y'); ?>
+            </span>
         </h2>
-        <?php the_field('description'); ?>
-        <?php $date = DateTime::createFromFormat('Ymd', get_field('date')); ?>
-        <span class="date" data-date="<?php echo $date->format('Y-m-d'); ?>">
-            <?php echo $date->format('M j, Y'); ?>
-        </span>
+        <div class="description">
+            <?php the_field('description'); ?>
+        </div>
     </div>
 
     <?php endwhile; ?>

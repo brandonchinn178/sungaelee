@@ -7,7 +7,13 @@ register_nav_menu('primary', 'Primary Navigation Menu');
 function page_title() {
     bloginfo('name');
     if ( !is_front_page() ) {
-        echo ' | ' . get_page_title();
+        echo ' | ';
+
+        if ( ($id = get_query_var('cat')) != '' ) {
+            echo get_category($id)->name;
+        } else if ( ($id = get_query_var('page_id')) != '' ) {
+            echo get_post($id)->post_title;
+        } 
     }
 }
 

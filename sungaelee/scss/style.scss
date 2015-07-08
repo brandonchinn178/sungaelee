@@ -98,11 +98,26 @@ header {
         .event-list, .calendar {
             display: inline-block;
             width: 49%;
+            padding: 0 10px;
             vertical-align: top;
         }
-        .title a {
-            text-decoration: none;
-            color: initial;
+        .event {
+            .title {
+                a {
+                    text-decoration: none;
+                    color: initial;
+                }
+                .date {
+                    font-size: 0.6em;
+                    color: #888;
+                    font-style: italic;
+                    vertical-align: middle;
+                    &:before {
+                        content: "\2014";
+                        margin-right: 5px;
+                    }
+                }
+            }
         }
     }
 }
