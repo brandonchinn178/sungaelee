@@ -60,7 +60,7 @@ wp menu item add-term my-menu category $(
 wp menu item add-post my-menu $(
     wp post create --post_type=page --post_title=Media --post_content="This is the media page." --post_status=publish --porcelain
 )
-wp menu item add-post my-menu $(
+wp menu item add-term my-menu category $(
     wp term create category Lectures --description="Lectures" --porcelain
 )
 

@@ -38,7 +38,7 @@
 
     <?php else: ?>
 
-    <h2>No events to show</h2>
+    <p>No events to show</p>
 
     <?php endif; ?>
 </div>

@@ -92,6 +92,9 @@ header {
     // compensate for footer
     padding-bottom: 200px;
     &.events {
+        h1 {
+            margin-bottom: 0.5em;
+        }
         .event-list, .calendar {
             display: inline-block;
             width: 49%;

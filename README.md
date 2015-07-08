@@ -33,6 +33,7 @@ Even though most of the setting up occurs in the provisioning of the Vagrant mac
     Also, use the following settings for this field group:
 
     - Rules: Post Category is equal to Events
+    - Hide: Content Editor
 
 ## Running
 1. Go to `http://localhost:8888`
