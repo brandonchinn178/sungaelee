@@ -54,8 +54,8 @@ wp post create --post_type=page --post_title=Media --post_content="This is the m
 wp post create --post_type=page --post_title=Lectures --post_content="This is the lectures page." --post_status=publish
 
 # posts
-wp term delete category 1
 wp term create category Event --description="An event announcement"
+wp term create category Lecture --description="A Lecture and its details"
 
 # menus
 wp menu create my-menu

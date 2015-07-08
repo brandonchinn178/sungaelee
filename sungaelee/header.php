@@ -28,4 +28,4 @@
                     ?>
                 </div>
             </header>
-            <div class="content">
+            <div class="content <?php echo strtolower(get_the_title()); ?>">

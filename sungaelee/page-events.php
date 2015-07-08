@@ -7,11 +7,14 @@
         'category_name' => 'event',
         'meta_query' => array(
             array(
-                'key'     => 'event_date',
+                'key'     => 'date',
                 'compare' => '>=',
                 'value'   => date('Ymd')
             )
-        )
+        ),
+        'order' => 'ASC',
+        'orderby' => 'meta_value',
+        'meta_key' => 'date'
     ));
 
     if ( $query->have_posts() ):
@@ -21,11 +24,11 @@
 
 <div class="event">
     <h2><?php the_title(); ?></h2>
-    <?php the_content(); ?>
+    <?php the_field('description'); ?>
     <span class="date">
         <?php
-            $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
-            echo $date->format('M d, yy');
+            $date = DateTime::createFromFormat('Ymd', get_field('date'));
+            echo $date->format('M j, Y');
         ?>
     </span>
 </div>

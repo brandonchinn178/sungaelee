@@ -22,9 +22,13 @@ Even though most of the setting up occurs in the provisioning of the Vagrant mac
     
     This advanced custom field group manages the fields related to Event posts. Create the following fields (unmentioned options can be anything):
 
-    - Field Name: event_date
-    - Field Type: Date Picker
-    - Save format: yymmdd
+    - Description
+        - Field Name: description
+        - Field Type: Wysiwyg Editor
+    - Date
+        - Field Name: date
+        - Field Type: Date Picker
+        - Save format: yymmdd
 
     Also, use the following settings for this field group:
 
