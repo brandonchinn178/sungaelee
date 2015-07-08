@@ -53,6 +53,10 @@ wp post create --post_type=page --post_title=Events --post_content="This is the 
 wp post create --post_type=page --post_title=Media --post_content="This is the media page." --post_status=publish
 wp post create --post_type=page --post_title=Lectures --post_content="This is the lectures page." --post_status=publish
 
+# posts
+wp term delete category 1
+wp term create category Event --description="An event announcement"
+
 # menus
 wp menu create my-menu
 wp menu location assign my-menu primary
@@ -63,3 +67,7 @@ done
 # spots plugin
 wp plugin install spots --activate
 wp post create --post_type=spot --post_title=Footer --post_content="Dr. Sungae Lee | (123) 456-7890" --post_status=publish
+
+# acf plugin
+wp plugin install advanced-custom-fields --activate
+wp post create --post_type=acf --post_title="Event Fields" --post_name="acf_event-fields" --post_status=publish
