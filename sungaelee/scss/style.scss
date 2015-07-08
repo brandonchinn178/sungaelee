@@ -89,6 +89,15 @@ header {
 
 .content {
     padding: 50px;
+    // compensate for footer
+    padding-bottom: 200px;
+    &.events {
+        .event-list, .calendar {
+            display: inline-block;
+            width: 49%;
+            vertical-align: top;
+        }
+    }
 }
 
 footer {
@@ -97,6 +106,7 @@ footer {
     width: 100%;
     height: 150px;
     background: $theme-black;
+    z-index: 5;
     p {
         color: $theme-white;
         font-weight: 300;

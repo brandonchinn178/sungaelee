@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cinzel+Decorative">
+        <?php add_to_head(); ?>
     </head>
     <body>
         <div class="container">
