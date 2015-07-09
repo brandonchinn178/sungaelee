@@ -15,4 +15,11 @@
         '<div class="description">%s</div>',
         get_field('description', $post_id)
     );
+
+    $category = get_category_by_slug('events');
+    printf(
+        '<p class="back"><a href="%s">Go back to %s</a></p>',
+        get_category_link($category->term_id),
+        $category->name
+    );
 ?>

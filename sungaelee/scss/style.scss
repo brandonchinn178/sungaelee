@@ -91,19 +91,23 @@ header {
     padding: 50px;
     // compensate for footer
     padding-bottom: 200px;
-    h1 {
-        margin-bottom: 0.5em;
+    a {
+        color: $theme-black;
+        &:hover {
+            color: $theme-blue;
+        }
     }
     h2 a {
         text-decoration: none;
-        color: initial;
+        &:hover {
+            color: initial;
+        }
     }
 
     &.events {
         // 50% width doesn't wrap
         font-size: 0;
         h1 {
-            margin-bottom: 0;
             padding-bottom: 0.5em;
             border-bottom: 1px solid #eee;
         }
@@ -132,6 +136,28 @@ header {
                             margin-right: 5px;
                         }
                     }
+                }
+            }
+        }
+        .calendar {
+            a {
+                color: $theme-white;
+            }
+        }
+    }
+
+    &.single-post-events {
+        .date {
+            font-style: italic;
+            margin-bottom: 0.5em;
+        }
+        .back {
+            margin-top: 20px;
+            a {
+                text-decoration: none;
+                &:before {
+                   content: "\2190";
+                   margin-right: 10px;
                 }
             }
         }
