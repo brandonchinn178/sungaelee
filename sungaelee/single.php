@@ -5,12 +5,13 @@
     $post_id = $post->ID;
     if ( $post == null ):
 ?>
+
     <h1>404 Not Found</h1>
     <p>Sorry, we couldn't find what you were looking for.</p>
 
 <?php else: ?>
 
-    <h2><?php echo apply_filters( 'the_title', $post->post_title ); ?></h2>
+    <h1><?php echo apply_filters( 'the_title', $post->post_title ); ?></h1>
 
     <?php
         $categories = wp_get_post_categories($post_id, array('fields' => 'slugs'));

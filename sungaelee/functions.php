@@ -22,48 +22,52 @@ add_filter('show_admin_bar', '__return_false');
 /* Adds any necessary tags to the <head> section */
 function enqueue_scripts() {
     $root = get_template_directory_uri() . '/';
+    $page_types = get_page_types();
 
-    switch (get_page_title()) {
-        case 'events':
-            wp_enqueue_script(
-                'moment',
-                $root . 'vendor/moment.min.js',
-                array('jquery')
-            );
-            wp_enqueue_script(
-                'fullcalendar',
-                $root . 'vendor/fullcalendar.min.js',
-                array('jquery', 'moment')
-            );
-            wp_enqueue_style(
-                'fullcalendar',
-                $root . 'vendor/fullcalendar.min.css'
-            );
-            wp_enqueue_script(
-                'main',
-                $root . 'js/events.js',
-                array('fullcalendar', 'jquery')
-            );
-            break;
+    if ( in_array('events', $page_types) ) {
+        wp_enqueue_script(
+            'moment',
+            $root . 'vendor/moment.min.js',
+            array('jquery')
+        );
+        wp_enqueue_script(
+            'fullcalendar',
+            $root . 'vendor/fullcalendar.min.js',
+            array('jquery', 'moment')
+        );
+        wp_enqueue_style(
+            'fullcalendar',
+            $root . 'vendor/fullcalendar.min.css'
+        );
+        wp_enqueue_script(
+            'main',
+            $root . 'js/events.js',
+            array('fullcalendar', 'jquery')
+        );
     }
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
 /* Gets the page title for the current page */
-function get_page_title() {
+function get_page_types() {
     if (get_post(get_query_var('page_id'))->post_name == 'about') {
-        return 'about';
+        return array('about');
     } else if (get_category(get_query_var('cat'))->slug == 'events') {
-        return 'events';
+        return array('events');
     } else if (get_post(get_query_var('page_id'))->post_name == 'media') {
-        return 'media';
+        return array('media');
     } else if (get_category(get_query_var('cat'))->slug == 'lectures') {
-        return 'lectures';
-    } else if (get_query_var('p') != '') {
-        return 'single-post';
+        return array('lectures');
+    } else if ( ($post_id = get_query_var('p')) != '' ) {
+        $types = array('single-post');
+        $categories = wp_get_post_categories($post_id, array('fields' => 'slugs'));
+        foreach ($categories as $type) {
+            array_push($types, 'single-post-' . $type);
+        }
+        return $types;
     } else {
-        return 'other';
+        return array('other');
     }
 }
 
