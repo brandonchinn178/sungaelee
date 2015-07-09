@@ -1,39 +1,48 @@
-<?php get_header(); ?>
+<?php
+    get_header();
 
-<h1>Lectures</h1>
+    echo '<h1>Lectures</h1>';
+    echo '<div class="lecture-list">';
 
-<div class="lecture-list">
-    <?php
-        $query = new WP_Query(array(
-            'category_name' => 'lectures'
-        ));
+    $query = new WP_Query(array(
+        'category_name' => 'lectures'
+    ));
+    if ($query->have_posts()) {
+        while($query->have_posts()) {
+            $query->the_post();
+            $permalink = get_permalink();
+            printf(
+                '<div class="lecture" data-permalink=%s>',
+                $permalink
+            );
 
-        if ( $query->have_posts() ):
-            while ( $query->have_posts() ):
-                $query->the_post();
-                $permalink = get_permalink();
-    ?>
+            // title
+            printf(
+                '<h2 class="title"><a href="%s">%s</a></h2>',
+                $permalink,
+                get_the_title()
+            );
+            // thumbnail
+            printf(
+                '<div class="thumbnail"><a href="%s"><img src="%s"></a></div>',
+                $permalink,
+                get_field('video')->thumbnail_url
+            );
+            // description
+            printf(
+                '<div class="description">%s</div>',
+                get_field('description')
+            );
 
-    <div class="lecture" data-permalink="<?php echo $permalink; ?>">
-        <h2 class="title">
-            <a href="<?php echo $permalink; ?>"><?php the_title(); ?></a>
-        </h2>
-        <div class="thumbnail">
-            <a href="<?php echo $permalink; ?>">
-                <img src="<?php echo get_field('video')->thumbnail_url; ?>">
-            </a>
-        </div>
-        <div class="description">
-            <?php the_field('description'); ?>
-        </div>
-    </div>
+            // .lecture
+            echo '</div>';
+        }
+    } else {
+        echo '<p>No lectures to show.</p>';
+    }
 
-    <?php endwhile; ?>
-    <?php else: ?>
+    // .lecture-list
+    echo '</div>';
 
-    <p>No lectures to show</p>
-
-    <?php endif; ?>
-</div>
-
-<?php get_footer(); ?>
+    get_footer();
+?>

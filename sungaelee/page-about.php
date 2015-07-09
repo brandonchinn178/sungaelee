@@ -1,8 +1,9 @@
-<?php get_header(); ?>
+<?php
+    get_header();
+    $page = get_post();
 
-<?php $page = get_post(); ?>
+    printf('<h1>%s</h1>', apply_filters('the_title', $page->post_title));
+    echo apply_filters('the_content', $page->post_content);
 
-<h1><?php echo apply_filters( 'the_title', $page->post_title ); ?></h1>
-<?php echo apply_filters( 'the_content', $page->post_content ); ?>
-
-<?php get_footer(); ?>
+    get_footer();
+?>

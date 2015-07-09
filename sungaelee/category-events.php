@@ -1,49 +1,58 @@
-<?php get_header(); ?>
+<?php
+    get_header();
 
-<div class="event-list">
-    <h1>Upcoming Events</h1>
+    echo '<div class="event-list">';
+    echo '<h1>Upcoming Events</h1>';
 
-    <?php
-        $query = new WP_Query(array(
-            'category_name' => 'events',
-            'meta_query' => array(
-                array(
-                    'key'     => 'date',
-                    'compare' => '>=',
-                    'value'   => date('Ymd')
-                )
-            ),
-            'order' => 'ASC',
-            'orderby' => 'meta_value',
-            'meta_key' => 'date'
-        ));
+    $query = new WP_Query(array(
+        'category_name' => 'events',
+        'meta_query' => array(
+            array(
+                'key' => 'date',
+                'compare' => '>=',
+                'value' => date('Ymd')
+            )
+        ),
+        'order' => 'ASC',
+        'orderby' => 'meta_value',
+        'meta_key' => 'date'
+    ));
 
-        if ( $query->have_posts() ):
-            while ( $query->have_posts() ):
-                $query->the_post();
-    ?>
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            $permalink = get_permalink();
+            $date = DateTime::createFromFormat('Ymd', get_field('date'));
+            printf('<div class="event" data-permalink="%s">', $permalink);
 
-    <div class="event" data-permalink="<?php echo get_permalink(); ?>">
-        <?php $date = DateTime::createFromFormat('Ymd', get_field('date')); ?>
-        <h2 class="title">
-            <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
-            <span class="date" data-date="<?php echo $date->format('Y-m-d'); ?>">
-                <?php echo $date->format('M j, Y'); ?>
-            </span>
-        </h2>
-        <div class="description">
-            <?php the_field('description'); ?>
-        </div>
-    </div>
+            // title
+            printf(
+                '<h2 class="title">
+                    <a href="%s">%s</a>
+                    <span class="date" data-date="%s">%s</span>
+                </h2>',
+                $permalink,
+                get_the_title(),
+                $date->format('Y-m-d'),
+                $date->format('M j, Y')
+            );
 
-    <?php endwhile; ?>
-    <?php else: ?>
+            // description
+            printf(
+                '<div class="description">%s</div>',
+                get_field('description')
+            );
 
-    <p>No events to show</p>
+            // .event
+            echo '</div>';
+        }
+    } else {
+        echo '<p>No events to show.</p>';
+    }
 
-    <?php endif; ?>
-</div>
+    // .event-list
+    echo '</div>';
+    echo '<div class="calendar"></div>';
 
-<div class="calendar"></div>
-
-<?php get_footer(); ?>
+    get_footer();
+?>

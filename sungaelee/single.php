@@ -1,39 +1,35 @@
-<?php get_header(); ?>
-
 <?php
+    get_header();
+
     $post = get_post();
     $post_id = $post->ID;
-    if ( $post == null ):
-?>
 
-    <h1>404 Not Found</h1>
-    <p>Sorry, we couldn't find what you were looking for.</p>
-
-<?php else: ?>
-
-    <h1><?php echo apply_filters( 'the_title', $post->post_title ); ?></h1>
-
-    <?php
+    if ($post == null) {
+        echo '<h1>404 Not Found</h1>';
+        echo "<p>Sorry, we couldn't find what you were looking for.</p>";
+    } else {
         $categories = wp_get_post_categories($post_id, array('fields' => 'slugs'));
-        if ( in_array('events', $categories) ):
-    ?>
-        <p class="date">
-            <?php
-                $date = DateTime::createFromFormat('Ymd', get_field('date', $post_id));
-                echo $date->format('l, F j Y');
-            ?>
-        </p>
 
-        <div class="description">
-            <?php the_field('description', $post_id); ?>
-        </div>
+        if ( in_array('events', $categories) ) {
+            $date = DateTime::createFromFormat('Ymd', get_field('date', $post_id));
+            printf(
+                '<h1>%s</h1>',
+                apply_filters('the_title', $post->post_title)
+            );
+            printf(
+                '<p class="date">%s</p>',
+                $date->format('l, F j Y')
+            );
+            printf(
+                '<div class="description">%s</div>',
+                get_field('description', $post_id)
+            );
+        } else if ( in_array('lectures', $categories) ) {
 
-    <?php elseif ( in_array('lectures', $categories) ): ?>
+        } else {
 
-    <?php else: ?>
+        }
+    }
 
-    <?php endif; ?>
-
-<?php endif; ?>
-
-<?php get_footer(); ?>
+    get_footer();
+?>
