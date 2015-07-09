@@ -58,7 +58,7 @@ function get_page_title() {
         return 'events';
     } else if (get_post(get_query_var('page_id'))->post_name == 'media') {
         return 'media';
-    } else if (get_post(get_query_var('page_id'))->post_name == 'lectures') {
+    } else if (get_category(get_query_var('cat'))->slug == 'lectures') {
         return 'lectures';
     } else if (get_query_var('p') != '') {
         return 'single-post';

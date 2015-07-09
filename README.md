@@ -18,7 +18,7 @@ Designing a new website for Dr. SungAe Lee, which will be used for event announc
 
 Even though most of the setting up occurs in the provisioning of the Vagrant machine, some tasks, such as configuring plugins, still need to be done manually. Follow the following steps to set up the correct settings:
 
-1. Event Fields
+1. Event Information
     
     This advanced custom field group manages the fields related to Event posts. Create the following fields (unmentioned options can be anything):
 
@@ -34,6 +34,18 @@ Even though most of the setting up occurs in the provisioning of the Vagrant mac
 
     - Rules: Post Category is equal to Events
     - Hide: Content Editor
+
+2. Lecture Information
+
+    This advanced custom field group manages fields related to Lecture posts. Create the following fields:
+
+    - Video
+        - Field Name: video
+        - Field Type: oEmbed
+        - Returned Format: Data Object
+    - Description
+        - Field Name: description
+        - Field Type: Wysiwyg Editor
 
 ## Running
 1. Go to `http://localhost:8888`

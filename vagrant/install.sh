@@ -70,4 +70,8 @@ wp post create --post_type=spot --post_title=Footer --post_content="Dr. Sungae L
 
 # acf plugin
 wp plugin install advanced-custom-fields --activate
-wp post create --post_type=acf --post_title="Event Fields" --post_name="acf_event-fields" --post_status=publish
+wp post create --post_type=acf --post_title="Event Information" --post_name="acf_event-information" --post_status=publish
+wp post create --post_type=acf --post_title="Lecture Information" --post_name="acf_lecture-information" --post_status=publish
+
+# acf oembed field
+wp plugin install advanced-custom-fields-oembed-field --activate

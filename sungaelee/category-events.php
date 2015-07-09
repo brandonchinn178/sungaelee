@@ -37,7 +37,6 @@
     </div>
 
     <?php endwhile; ?>
-
     <?php else: ?>
 
     <p>No events to show</p>
