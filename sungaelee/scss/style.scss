@@ -102,6 +102,11 @@ header {
             vertical-align: top;
         }
         .event {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            &:first-of-type {
+                border-top: 1px solid #eee;
+            }
             .title {
                 a {
                     text-decoration: none;
