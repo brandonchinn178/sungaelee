@@ -9,6 +9,7 @@ jQuery(document).ready(function($) {
     });
 
     $(".calendar").fullCalendar({
-        events: allEvents
+        events: allEvents,
+        height: $(".calendar").height()
     });
 });

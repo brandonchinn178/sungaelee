@@ -1,8 +1,9 @@
 <?php
     get_header();
 
-    echo '<div class="event-list">';
+    echo '<div class="event-list-container">';
     echo '<h1>Upcoming Events</h1>';
+    echo '<div class="event-list">';
 
     $query = new WP_Query(array(
         'category_name' => 'events',
@@ -51,6 +52,8 @@
     }
 
     // .event-list
+    echo '</div>';
+    // .event-list-container
     echo '</div>';
     echo '<div class="calendar"></div>';
 

@@ -102,28 +102,35 @@ header {
     &.events {
         // 50% width doesn't wrap
         font-size: 0;
-        .event-list, .calendar {
+        h1 {
+            margin-bottom: 0;
+            padding-bottom: 0.5em;
+            border-bottom: 1px solid #eee;
+        }
+        .event-list-container, .calendar {
             display: inline-block;
             width: 50%;
+            height: 540px;
             padding: 0 10px;
             vertical-align: top;
             font-size: initial;
         }
-        .event {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            &:first-of-type {
-                border-top: 1px solid #eee;
-            }
-            .title {
-                .date {
-                    font-size: 0.6em;
-                    color: #888;
-                    font-style: italic;
-                    vertical-align: middle;
-                    &:before {
-                        content: "\2014";
-                        margin-right: 5px;
+        .event-list {
+            height: 500px;
+            overflow: scroll;
+            .event {
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+                .title {
+                    .date {
+                        font-size: 0.6em;
+                        color: #888;
+                        font-style: italic;
+                        vertical-align: middle;
+                        &:before {
+                            content: "\2014";
+                            margin-right: 5px;
+                        }
                     }
                 }
             }
