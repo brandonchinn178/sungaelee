@@ -1,4 +1,4 @@
-$(document).ready(function() {
+jQuery(document).ready(function($) {
     var allEvents = [];
     $(".event").each(function() {
         allEvents.push({

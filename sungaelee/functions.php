@@ -19,28 +19,36 @@ function page_title() {
 
 add_filter('show_admin_bar', '__return_false');
 
-function add_script($path) {
-    $path = get_bloginfo('template_directory') . '/' . $path;
-    printf('<script src="%s"></script>', $path);
-}
-
-function add_style($path) {
-    $path = get_bloginfo('template_directory') . '/' . $path;
-    printf('<link rel="stylesheet" type="text/css" href="%s" />', $path);
-}
-
 /* Adds any necessary tags to the <head> section */
-function add_to_head() {
-    add_script('/vendor/jquery-2.1.4.min.js');
+function enqueue_scripts() {
+    $root = get_template_directory_uri() . '/';
+
     switch (get_page_title()) {
         case 'events':
-            add_script('vendor/moment.min.js');
-            add_script('vendor/fullcalendar.min.js');
-            add_style('vendor/fullcalendar.min.css');
-            add_script('js/events.js');
+            wp_enqueue_script(
+                'moment',
+                $root . 'vendor/moment.min.js',
+                array('jquery')
+            );
+            wp_enqueue_script(
+                'fullcalendar',
+                $root . 'vendor/fullcalendar.min.js',
+                array('jquery', 'moment')
+            );
+            wp_enqueue_style(
+                'fullcalendar',
+                $root . 'vendor/fullcalendar.min.css'
+            );
+            wp_enqueue_script(
+                'main',
+                $root . 'js/events.js',
+                array('fullcalendar', 'jquery')
+            );
             break;
     }
 }
+
+add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
 /* Gets the page title for the current page */
 function get_page_title() {
