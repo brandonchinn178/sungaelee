@@ -1,0 +1,49 @@
+@import 'partials/settings';
+
+.content {
+    // 50% width doesn't wrap
+    font-size: 0;
+    h1 {
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid #eee;
+    }
+    h2 a {
+        text-decoration: none;
+        &:hover {
+            color: initial;
+        }
+    }
+    .event-list-container, .calendar {
+        display: inline-block;
+        width: 50%;
+        height: 540px;
+        padding: 0 10px;
+        vertical-align: top;
+        font-size: initial;
+    }
+    .event-list {
+        height: 500px;
+        overflow: scroll;
+        .event {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            .title {
+                .date {
+                    font-size: 0.6em;
+                    color: #888;
+                    font-style: italic;
+                    vertical-align: middle;
+                    &:before {
+                        content: "\2014";
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .calendar {
+        a {
+            color: $theme-white;
+        }
+    }
+}

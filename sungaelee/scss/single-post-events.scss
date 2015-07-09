@@ -1,0 +1,16 @@
+.content {
+    .date {
+        font-style: italic;
+        margin-bottom: 0.5em;
+    }
+    .back {
+        margin-top: 20px;
+        a {
+            text-decoration: none;
+            &:before {
+               content: "\2190";
+               margin-right: 10px;
+            }
+        }
+    }
+}

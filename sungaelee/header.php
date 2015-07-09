@@ -29,4 +29,4 @@
                     ?>
                 </div>
             </header>
-            <div class="content <?php echo implode(' ', get_page_types()); ?>">
+            <div class="content">

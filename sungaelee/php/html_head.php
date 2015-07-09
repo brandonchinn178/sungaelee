@@ -28,16 +28,30 @@ function enqueue_scripts() {
         wp_enqueue_script(
             'fullcalendar',
             $root . 'vendor/fullcalendar.min.js',
-            array('jquery', 'moment')
+            array('moment')
         );
         wp_enqueue_script(
             'events',
             $root . 'js/events.js',
-            array('fullcalendar', 'jquery')
+            array('fullcalendar')
         );
         wp_enqueue_style(
             'fullcalendar',
             $root . 'vendor/fullcalendar.min.css'
+        );
+        wp_enqueue_style(
+            'events',
+            $root . 'css/events.css'
+        );
+    } else if ( in_array('lectures', $page_types) ) {
+        wp_enqueue_style(
+            'lectures',
+            $root . 'css/lectures.css'
+        );
+    } else if ( in_array('single-post-events', $page_types) ) {
+        wp_enqueue_style(
+            'single-post-events',
+            $root . 'css/single-post-events.css'
         );
     }
 }
