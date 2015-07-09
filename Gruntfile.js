@@ -5,13 +5,19 @@ module.exports = function (grunt) {
     grunt.initConfig({
         sass: {
             dist: {
-                files: [{
-                    expand: true,
-                    cwd: "sungaelee/scss",
-                    src: "*.scss",
-                    dest: "sungaelee",
-                    ext: ".css"
-                }]
+                files: [
+                    {
+                        src: "sungaelee/scss/style.scss",
+                        dest: "sungaelee/style.css"
+                    },
+                    {
+                        expand: true,
+                        cwd: "sungaelee/scss/",
+                        src: ["*.scss", "!style.scss"],
+                        dest: "sungaelee/css/",
+                        ext: ".css"
+                    }
+                ]
             }
         },
         watch: {
