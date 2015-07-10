@@ -4,19 +4,15 @@
     $post = get_post();
     $post_id = $post->ID;
 
-    if ($post == null) {
-        echo '<h1>404 Not Found</h1>';
-        echo "<p>Sorry, we couldn't find what you were looking for.</p>";
+    if ( $post == null ) {
+        include 'templates/404.php';
+    } else if ( in_category('events') ) {
+        include 'templates/single-events.php';
+    } else if ( in_category('lectures') ) {
+        include 'templates/single-lectures.php';
     } else {
-        $types = get_page_types();
-
-        if (in_array('single-post-events', $types)) {
-            include 'single-events.php';
-        } else if (in_array('single-post-lectures', $types)) {
-            include 'single-lectures.php';
-        } else {
-            include 'single-uncategorized.php';
-        }
+        printf('<h1>%s</h1>', apply_filters('the_title', $post->post_title));
+        echo apply_filters('the_content', $post->post_content);
     }
 
     get_footer();

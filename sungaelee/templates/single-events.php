@@ -1,7 +1,4 @@
 <?php
-    // Included from single.php
-    // Has access to variables: $post, $post_id
-
     $date = DateTime::createFromFormat('Ymd', get_field('date', $post_id));
     printf(
         '<h1>%s</h1>',

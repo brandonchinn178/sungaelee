@@ -1,6 +1,4 @@
 <?php
-    get_header();
-
     echo '<div class="event-list-container">';
     echo '<h1>Upcoming Events</h1>';
     echo '<div class="event-list">';
@@ -56,6 +54,4 @@
     // .event-list-container
     echo '</div>';
     echo '<div class="calendar"></div>';
-
-    get_footer();
 ?>

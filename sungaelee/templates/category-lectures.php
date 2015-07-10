@@ -1,15 +1,10 @@
 <?php
-    get_header();
-
     echo '<h1>Lectures</h1>';
     echo '<div class="lecture-list">';
 
-    $query = new WP_Query(array(
-        'category_name' => 'lectures'
-    ));
-    if ($query->have_posts()) {
-        while($query->have_posts()) {
-            $query->the_post();
+    if (have_posts()) {
+        while(have_posts()) {
+            the_post();
             $permalink = get_permalink();
             printf(
                 '<div class="lecture" data-permalink=%s>',
@@ -43,6 +38,4 @@
 
     // .lecture-list
     echo '</div>';
-
-    get_footer();
 ?>
