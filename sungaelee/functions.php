@@ -8,5 +8,6 @@ add_filter('show_admin_bar', '__return_false');
 
 include 'php/html_head.php';
 include 'php/acf_fields.php';
+include 'php/utils.php';
 
 ?>

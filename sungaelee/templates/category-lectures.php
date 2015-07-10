@@ -1,14 +1,17 @@
 <?php
-    echo '<h1>Lectures</h1>';
-    echo '<div class="lecture-list">';
+    echo(
+        '<h1>Lectures</h1>
+        <div class="lecture-list">'
+    );
 
     if (have_posts()) {
         while(have_posts()) {
             the_post();
-            $permalink = get_permalink();
+
             $title = get_the_title();
+            $permalink = get_permalink();
             $thumbnail_url = get_field('video')->thumbnail_url;
-            $description = get_field('description');
+            $description = trim_words(get_field('description'), 60);
 
             echo(
                 "<div class='lecture' data-permalink='$permalink'>
@@ -26,5 +29,5 @@
         echo '<p>No lectures to show.</p>';
     }
 
-    echo '</div>'; // .lecture-list
+    echo '</div>';
 ?>
