@@ -4,9 +4,7 @@
     $post = get_post();
     $post_id = $post->ID;
 
-    if ( $post == null ) {
-        include 'templates/404.php';
-    } else if ( in_category('events') ) {
+    if ( in_category('events') ) {
         include 'templates/single-events.php';
     } else if ( in_category('lectures') ) {
         include 'templates/single-lectures.php';

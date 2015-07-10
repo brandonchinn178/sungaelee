@@ -1,0 +1,8 @@
+.content {
+    h2 a {
+        text-decoration: none;
+        &:hover {
+            color: initial;
+        }
+    }
+}

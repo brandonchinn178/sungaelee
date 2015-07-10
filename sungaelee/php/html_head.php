@@ -10,35 +10,41 @@ function page_title() {
 function enqueue_scripts() {
     $root = get_template_directory_uri() . '/';
 
-    if ( is_category('events') ) {
-        wp_enqueue_script(
-            'moment',
-            $root . 'vendor/moment.min.js',
-            array('jquery')
-        );
-        wp_enqueue_script(
-            'fullcalendar',
-            $root . 'vendor/fullcalendar.min.js',
-            array('moment')
-        );
-        wp_enqueue_script(
-            'events',
-            $root . 'js/events.js',
-            array('fullcalendar')
-        );
+    if ( is_category() ) {
         wp_enqueue_style(
-            'fullcalendar',
-            $root . 'vendor/fullcalendar.min.css'
+            'category',
+            $root . 'css/category.css'
         );
-        wp_enqueue_style(
-            'events',
-            $root . 'css/events.css'
-        );
-    } else if ( is_category('lectures') ) {
-        wp_enqueue_style(
-            'lectures',
-            $root . 'css/lectures.css'
-        );
+        if ( is_category('events') ) {
+            wp_enqueue_script(
+                'moment',
+                $root . 'vendor/moment.min.js',
+                array('jquery')
+            );
+            wp_enqueue_script(
+                'fullcalendar',
+                $root . 'vendor/fullcalendar.min.js',
+                array('moment')
+            );
+            wp_enqueue_script(
+                'events',
+                $root . 'js/events.js',
+                array('fullcalendar')
+            );
+            wp_enqueue_style(
+                'fullcalendar',
+                $root . 'vendor/fullcalendar.min.css'
+            );
+            wp_enqueue_style(
+                'events',
+                $root . 'css/events.css'
+            );
+        } else if ( is_category('lectures') ) {
+            wp_enqueue_style(
+                'lectures',
+                $root . 'css/lectures.css'
+            );
+        }
     } else if ( is_single() ) {
         if ( in_category('events') ) {
             wp_enqueue_style(
@@ -46,6 +52,11 @@ function enqueue_scripts() {
                 $root . 'css/single-post-events.css'
             );
         }
+    } else if ( is_page() ) {
+        wp_enqueue_style(
+            'page',
+            $root . 'css/page.css'
+        );
     }
 }
 
