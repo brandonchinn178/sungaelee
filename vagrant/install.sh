@@ -32,6 +32,7 @@ sudo rm wp-config-sample.php
 # generate wp-config.php and setup wordpress in database
 wp core config --dbname=wordpress_db --dbuser=wordpress_user --dbpass=wordpresspass
 wp core install --url=localhost:8888 --title="Dr. Sungae Lee" --admin_user=admin --admin_password=password --admin_email=admin@example.com
+wp option update timezone_string America/Los_Angeles
 
 ### Remove the default apache files and make a link to deliverable instead
 echo -e "\nLinking apache directories..."
