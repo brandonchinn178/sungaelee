@@ -1,0 +1,15 @@
+.content {
+    font-size: 0;
+    .lecture-list, .video {
+        font-size: initial;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 10px;
+    }
+    .lecture-list {
+        width: 35%;
+    }
+    .video {
+        width: 65%;
+    }
+}

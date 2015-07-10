@@ -1,7 +1,9 @@
 <?php
-    echo '<div class="event-list-container">';
-    echo '<h1>Upcoming Events</h1>';
-    echo '<div class="event-list">';
+    echo(
+        '<div class="event-list-container">
+            <h1>Upcoming Events</h1>
+            <div class="event-list">'
+    );
 
     $query = new WP_Query(array(
         'category_name' => 'events',
@@ -20,38 +22,30 @@
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
+            $title = get_the_title();
             $permalink = get_permalink();
             $date = DateTime::createFromFormat('Ymd', get_field('date'));
-            printf('<div class="event" data-permalink="%s">', $permalink);
+            $description = get_field('description');
 
-            // title
-            printf(
-                '<h2 class="title">
-                    <a href="%s">%s</a>
-                    <span class="date" data-date="%s">%s</span>
-                </h2>',
-                $permalink,
-                get_the_title(),
-                $date->format('Y-m-d'),
-                $date->format('M j, Y')
+            echo(
+                "<div class='event' data-permalink='$permalink'>
+                    <h2 class='title'>
+                        <a href='$permalink'>$title</a>
+                        <span class='date' data-date='{$date->format('Y-m-d')}'>
+                            {$date->format('M j, Y')}
+                        </span>
+                    </h2>
+                    <div class='description'>$description</div>
+                </div>"
             );
-
-            // description
-            printf(
-                '<div class="description">%s</div>',
-                get_field('description')
-            );
-
-            // .event
-            echo '</div>';
         }
     } else {
         echo '<p>No events to show.</p>';
     }
 
-    // .event-list
-    echo '</div>';
-    // .event-list-container
-    echo '</div>';
-    echo '<div class="calendar"></div>';
+    echo(
+        '   </div>
+        </div>
+        <div class="calendar"></div>'
+    );
 ?>

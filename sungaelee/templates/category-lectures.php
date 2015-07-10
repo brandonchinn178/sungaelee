@@ -6,36 +6,25 @@
         while(have_posts()) {
             the_post();
             $permalink = get_permalink();
-            printf(
-                '<div class="lecture" data-permalink=%s>',
-                $permalink
-            );
+            $title = get_the_title();
+            $thumbnail_url = get_field('video')->thumbnail_url;
+            $description = get_field('description');
 
-            // title
-            printf(
-                '<h2 class="title"><a href="%s">%s</a></h2>',
-                $permalink,
-                get_the_title()
+            echo(
+                "<div class='lecture' data-permalink='$permalink'>
+                    <h2 class='title'>
+                        <a href='$permalink'>$title</a>
+                    </h2>
+                    <div class='thumbnail'>
+                        <a href='$permalink'><img src='$thumbnail_url'></a>
+                    </div>
+                    <div class='description'>$description</div>
+                </div>"
             );
-            // thumbnail
-            printf(
-                '<div class="thumbnail"><a href="%s"><img src="%s"></a></div>',
-                $permalink,
-                get_field('video')->thumbnail_url
-            );
-            // description
-            printf(
-                '<div class="description">%s</div>',
-                get_field('description')
-            );
-
-            // .lecture
-            echo '</div>';
         }
     } else {
         echo '<p>No lectures to show.</p>';
     }
 
-    // .lecture-list
-    echo '</div>';
+    echo '</div>'; // .lecture-list
 ?>

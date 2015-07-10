@@ -36,20 +36,25 @@ function enqueue_scripts() {
                 $root . 'vendor/fullcalendar.min.css'
             );
             wp_enqueue_style(
-                'events',
-                $root . 'css/events.css'
+                'category-events',
+                $root . 'css/category-events.css'
             );
         } else if ( is_category('lectures') ) {
             wp_enqueue_style(
-                'lectures',
-                $root . 'css/lectures.css'
+                'category-lectures',
+                $root . 'css/category-lectures.css'
             );
         }
     } else if ( is_single() ) {
         if ( in_category('events') ) {
             wp_enqueue_style(
-                'single-post-events',
-                $root . 'css/single-post-events.css'
+                'single-events',
+                $root . 'css/single-events.css'
+            );
+        } else if ( in_category('lectures') ) {
+            wp_enqueue_style(
+                'single-lectures',
+                $root . 'css/single-lectures.css'
             );
         }
     } else if ( is_page() ) {

@@ -1,6 +1,10 @@
 <?php
-    // Included from single.php
-    // Has access to variables: $post, $post_id
+    echo '<div class="lecture-list">';
 
-    echo 'Hello world!';
+    $query = new WP_Query('category_name', 'lectures');
+
+    // .lecture-list
+    echo '</div>';
+
+    printf('<div class="video">%s</div>', get_field('video', $post_id)->html);
 ?>
