@@ -11,11 +11,14 @@
         $permalink = get_the_permalink();
         $short_description = trim_words(get_field('description'), 30);
         $thumbnail_url = get_field('video')->thumbnail_url;
+        $highlight = (get_the_ID() == $post_id) ? 'highlight' : '';
 
         echo(
-            "<div class='lecture'>
+            "<div class='lecture $highlight'>
                 <h2><a href='$permalink'>$title</a></h2>
-                <a href='$permalink'><img src='$thumbnail_url'></a>
+                <div class='thumbnail'>
+                    <a href='$permalink'><img src='$thumbnail_url'></a>
+                </div>
                 <p class='description'>$short_description</p>
             </div>"
         );

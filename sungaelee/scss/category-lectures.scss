@@ -9,6 +9,9 @@
             padding: 10px;
             .title {
                 margin-bottom: 0.5em;
+                a {
+                    text-decoration: none;
+                }
             }
             .thumbnail {
                 display: inline-block;
@@ -32,7 +35,7 @@
                 }
                 &:hover a:before {
                     background-color: rgba(0,0,0,0.3);
-                    background-image: url(img/play.png);
+                    background-image: url(../img/play.png);
                 }
             }
             .description {

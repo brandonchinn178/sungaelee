@@ -11,10 +11,6 @@ function enqueue_scripts() {
     $root = get_template_directory_uri() . '/';
 
     if ( is_category() ) {
-        wp_enqueue_style(
-            'category',
-            $root . 'css/category.css'
-        );
         if ( is_category('events') ) {
             wp_enqueue_script(
                 'moment',

@@ -1,9 +1,10 @@
+@import 'partials/settings';
+
 .content {
     font-size: 0;
     .lecture-list, .video {
         display: inline-block;
         vertical-align: top;
-        padding: 0 30px;
     }
     .lecture-list {
         border: 3px ridge #eee;
@@ -11,8 +12,11 @@
         width: 35%;
         overflow: scroll;
         .lecture {
-            padding: 10px 0 20px;
+            padding: 20px;
             border-bottom: 1px solid #eee;
+            &.highlight {
+                background: lighten($theme-blue, 40);
+            }
             h2 {
                 margin-bottom: 0.5em;
                 font-size: 18px;
@@ -20,8 +24,27 @@
                     text-decoration: none;
                 }
             }
-            img {
-                width: 100px;
+            .thumbnail {
+                display: inline-block;
+                position: relative;
+                img {
+                    width: 100px;
+                }
+                a:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    background: rgba(0,0,0,0) no-repeat center center;
+                    background-size: 35%;
+                    transition: 0.3s ease-in-out;
+                }
+                &:hover a:before {
+                    background-color: rgba(0,0,0,0.3);
+                    background-image: url(../img/play.png);
+                }
             }
             .description {
                 display: inline-block;
@@ -33,6 +56,7 @@
         }
     }
     .video {
+        padding-left: 30px;
         width: 65%;
         .info {
             font-size: 14px;
