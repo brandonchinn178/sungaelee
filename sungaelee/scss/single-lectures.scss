@@ -58,6 +58,10 @@
     .video {
         padding-left: 30px;
         width: 65%;
+        iframe {
+            display: block;
+            margin: 0 auto 10px;
+        }
         .info {
             font-size: 14px;
         }
