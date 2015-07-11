@@ -1,0 +1,76 @@
+@import "partials/settings";
+@import "partials/mixins";
+
+.unscrollable {
+    overflow: hidden;
+}
+
+.media {
+    $size: 400px;
+    display: inline-block;
+    width: $size;
+    height: $size;
+    margin: 10px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+
+    a.zoom {
+        text-decoration: none;
+        &:hover {
+            opacity: 0.5;
+            color: initial;
+        }
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+    .thumbnail {
+        width: 75%;
+        margin: 10px auto;
+        display: block;
+        &:hover {
+            opacity: 0.5;
+            cursor: zoom-in;
+        }
+    }
+    .short-description {
+        font-size: 14px;
+        text-align: center;
+    }
+    .focus-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 100;
+        .focus {
+            @include absolute_center;
+            width: 550px;
+            background: $theme-white;
+            padding: 20px 30px;
+            max-height: 100%;
+            overflow-y: scroll;
+            overflow-x: visible;
+            iframe {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+                max-height: 300px;
+                display: block;
+                margin: 0 auto;
+            }
+            .description {
+                height: 150px;
+                overflow: scroll;
+                margin: 5px 0;
+            }
+        }
+    }
+}

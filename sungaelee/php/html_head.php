@@ -23,8 +23,8 @@ function enqueue_scripts() {
                 array('moment')
             );
             wp_enqueue_script(
-                'events',
-                $root . 'js/events.js',
+                'category-events',
+                $root . 'js/category-events.js',
                 array('fullcalendar')
             );
             wp_enqueue_style(
@@ -58,6 +58,17 @@ function enqueue_scripts() {
             'page',
             $root . 'css/page.css'
         );
+        if ( is_page('media') ) {
+            wp_enqueue_script(
+                'page-media',
+                $root . 'js/page-media.js',
+                array('jquery')
+            );
+            wp_enqueue_style(
+                'page-media',
+                $root . 'css/page-media.css'
+            );
+        }
     }
 }
 
