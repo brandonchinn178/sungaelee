@@ -11,7 +11,7 @@
             array(
                 'key' => 'date',
                 'compare' => '>=',
-                'value' => date('Ymd')
+                'value' => current_time('Ymd')
             )
         ),
         'order' => 'ASC',
