@@ -12,7 +12,7 @@
         foreach ($posts as $post) {
             $title = $post->post_title;
             $description = $post->post_content;
-            $short_description = trim_words($description, 35);
+            $short_description = trim_words($description, 20);
             $url = $post->guid;
 
             if ( $post->post_mime_type == 'video/x-flv' ) {
