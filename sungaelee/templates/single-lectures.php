@@ -28,12 +28,17 @@
     $description = get_field('description', $post_id);
     $video_html = get_field('video', $post_id)->html;
 
+    if (current_user_can('edit_posts')) {
+        $permalink = get_edit_post_link($post_id, '&');
+        $edit = "<span class='edit'><a href=$permalink>Edit</a></span>";
+    }
+
     echo(
         "</div>
         <div class='video'>
             $video_html
             <div class='info'>
-                <h1>$title</h1>
+                <h1>$title $edit</h1>
                 $description
             </div>
         </div>"

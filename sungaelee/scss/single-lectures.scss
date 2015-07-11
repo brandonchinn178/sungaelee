@@ -64,6 +64,24 @@
         }
         .info {
             font-size: 14px;
+            .edit {
+                font-size: 0.6em;
+                font-weight: normal;
+                font-style: italic;
+                margin-left: 5px;
+                a {
+                    color: #777;
+                    text-decoration: none;
+                    &:hover {
+                        color: #444;
+                    }
+                }
+                &:before {
+                    content: "\2014";
+                    margin-right: 10px;
+                    color: #777;
+                }
+            }
         }
     }
 }
