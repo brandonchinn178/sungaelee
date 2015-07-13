@@ -11,7 +11,7 @@
             $title = get_the_title();
             $permalink = get_permalink();
             $thumbnail_url = get_field('video')->thumbnail_url;
-            $description = trim_words(get_field('description'), 60);
+            $description = trim_words(get_the_content(), 60);
 
             echo(
                 "<div class='lecture' data-permalink='$permalink'>

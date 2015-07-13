@@ -9,7 +9,7 @@
 
         $title = get_the_title();
         $permalink = get_the_permalink();
-        $short_description = trim_words(get_field('description'), 30);
+        $short_description = trim_words(get_the_content(), 30);
         $thumbnail_url = get_field('video')->thumbnail_url;
         $highlight = (get_the_ID() == $post_id) ? 'highlight' : '';
 
@@ -25,7 +25,7 @@
     }
 
     $title = get_the_title($post_id);
-    $description = get_field('description', $post_id);
+    $description = apply_filters( 'the_content', $post->post_content );
     $video_html = get_field('video', $post_id)->html;
 
     if (current_user_can('edit_posts')) {

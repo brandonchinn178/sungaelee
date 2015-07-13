@@ -1,21 +1,14 @@
 <?php
 
 if ( function_exists('register_field_group') ) {
-    // Event Information
+    // Date
     register_field_group(array(
-        'id' => 'acf_event-information',
-        'title' => 'Event Information',
+        'id' => 'acf_date-field',
+        'title' => 'Date Picker',
         'fields' => array(
             array(
                 'key' => 'field_1',
-                'label' => 'Description',
-                'name' => 'description',
-                'type' => 'wysiwyg',
-                'required' => 0
-            ),
-            array(
-                'key' => 'field_2',
-                'label' => 'Date',
+                'label' => 'Choose a date',
                 'name' => 'date',
                 'type' => 'date_picker',
                 'required' => 1,
@@ -35,29 +28,22 @@ if ( function_exists('register_field_group') ) {
         ),
         'options' => array(
             'position' => 'normal',
-            'layout' => 'default',
-            'hide_on_screen' => array('the_content')
+            'layout' => 'no_box'
         )
     ));
 
-    // Lecture Information
+    // Video oEmbed
     register_field_group(array(
-        'id' => 'acf_lecture-information',
-        'title' => 'Lecture Information',
+        'id' => 'acf_video-oembed',
+        'title' => 'Video Embed',
         'fields' => array(
             array(
-                'key' => 'field_3',
+                'key' => 'field_2',
                 'label' => 'Video',
                 'name' => 'video',
                 'type' => 'oembed',
                 'required' => 1,
                 'returned_format' => 'object'
-            ),
-            array(
-                'key' => 'field_4',
-                'label' => 'Description',
-                'name' => 'description',
-                'type' => 'wysiwyg'
             )
         ),
         'location' => array(
@@ -71,8 +57,35 @@ if ( function_exists('register_field_group') ) {
         ),
         'options' => array(
             'position' => 'normal',
-            'layout' => 'default',
-            'hide_on_screen' => array('the_content')
+            'layout' => 'no_box'
+        )
+    ));
+
+    // Sidebar Image
+    register_field_group(array(
+        'id' => 'acf_image-field',
+        'title' => 'Sidebar Image',
+        'fields' => array(
+            array(
+                'key' => 'field_3',
+                'label' => 'Image',
+                'name' => 'image',
+                'type' => 'image',
+                'save_format' => 'url'
+            )
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page',
+                    'operator' => '==',
+                    'value' => get_page_by_path('about')->ID
+                )
+            )
+        ),
+        'options' => array(
+            'position' => 'normal',
+            'layout' => 'seamless'
         )
     ));
 }

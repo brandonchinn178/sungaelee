@@ -6,7 +6,7 @@
 
     $date = DateTime::createFromFormat('Ymd', get_field('date', $post_id));
     $title = get_the_title($post_id);
-    $description = get_field('description', $post_id);
+    $description = apply_filters( 'the_content', $post->post_content );
     $category = get_category_by_slug('events');
     $link = get_category_link($category->term_id);
 

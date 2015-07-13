@@ -4,11 +4,11 @@ Development
 x Make .wp-content class for elements that hold post content
     x <a> underline (remove underline in all other <a> tags)
     * Currently don't support Read More or Media in posts
-- About page image sidebar? (custom field, post_type=spot)
+x About page image sidebar? (custom field, post_type=spot)
 - Attachment page
 - Events truncate description
-- Events/Lectures remove description widget, just use content
-    - use generic URL custom
+x Events/Lectures remove description widget, just use content
+    x use generic custom fields
 - Events page calendar: hover on event = show event title
 - Home page
     - http://janellebarrera.com/

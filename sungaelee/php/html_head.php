@@ -68,6 +68,11 @@ function enqueue_scripts() {
                 'page-media',
                 $root . 'css/page-media.css'
             );
+        } else if ( is_page('about') ) {
+            wp_enqueue_style(
+                'page-about',
+                $root . 'css/page-about.css'
+            );
         }
     }
 }
