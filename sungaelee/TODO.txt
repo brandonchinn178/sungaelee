@@ -1,0 +1,27 @@
+Development
+===========
+
+- Make .wp-content class for elements that hold post content
+    - <a> underline (remove underline in all other <a> tags)
+    * Currently don't support Read More or Media in posts
+- About page image sidebar? (custom field, post_type=spot)
+- Attachment page
+- Events truncate description
+- Events/Lectures remove description widget, just use content
+    - use generic URL custom
+- Events page calendar: hover on event = show event title
+- Home page
+    - http://janellebarrera.com/
+    - editable content (spot)
+    - category for slideshow posts
+- favicon
+    - http://www.joyofmusic.org/wp-content/uploads/2014/06/Grand-Piano-favicon-16-by-16.jpg
+- Media page
+    - move .zoom class to img, remove anchor
+
+Production
+==========
+
+- Find server
+- Link domain
+- Check file uploads
