@@ -13,7 +13,7 @@
     echo(
         "<h1>$title $edit</h1>
         <p class='date'>{$date->format('l, F j Y')}</p>
-        <div class='description'>$description</div>
+        <div class='wp-content'>$description</div>
         <p class='back'>
             <a href=$link>Go back to $category->name</a>
         </p>"

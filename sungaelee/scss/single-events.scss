@@ -1,34 +1,13 @@
 .content {
-    .edit {
-        font-size: 0.6em;
-        font-weight: normal;
-        font-style: italic;
-        margin-left: 10px;
-        a {
-            color: #777;
-            text-decoration: none;
-            &:hover {
-                color: #444;
-            }
-        }
-        &:before {
-            content: "\2014";
-            margin-right: 10px;
-            color: #777;
-        }
-    }
     .date {
         font-style: italic;
         margin-bottom: 0.5em;
     }
     .back {
         margin-top: 20px;
-        a {
-            text-decoration: none;
-            &:before {
-               content: "\2190";
-               margin-right: 10px;
-            }
+        a:before {
+           content: "\2190";
+           margin-right: 10px;
         }
     }
 }

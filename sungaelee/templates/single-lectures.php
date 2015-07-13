@@ -39,7 +39,7 @@
             $video_html
             <div class='info'>
                 <h1>$title $edit</h1>
-                $description
+                <div class='wp-content'>$description</div>
             </div>
         </div>"
     );

@@ -36,7 +36,7 @@
                             {$date->format('M j, Y')}
                         </span>
                     </h2>
-                    <div class='description'>$description</div>
+                    <div class='wp-content'>$description</div>
                 </div>"
             );
         }

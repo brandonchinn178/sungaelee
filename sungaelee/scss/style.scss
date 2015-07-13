@@ -91,10 +91,37 @@ header {
     padding: 50px;
     // compensate for footer
     padding-bottom: 200px;
+    .edit {
+        font-size: 0.6em;
+        font-weight: normal;
+        font-style: italic;
+        margin-left: 5px;
+        a {
+            color: #777;
+            &:hover {
+                color: #444;
+            }
+        }
+        &:before {
+            content: "\2014";
+            margin-right: 10px;
+            color: #777;
+        }
+    }
     a {
         color: $theme-black;
+        text-decoration: none;
         &:hover {
             color: $theme-blue;
+        }
+    }
+    .wp-content {
+        font-size: 16px;
+        a {
+            text-decoration: underline;
+        }
+        blockquote {
+            font-style: italic;
         }
     }
 }
