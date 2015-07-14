@@ -14,8 +14,7 @@ x Events page calendar: hover on event = show event title
     - http://janellebarrera.com/
     - editable content (spot)
     - category for slideshow posts
-- favicon
-    - http://www.joyofmusic.org/wp-content/uploads/2014/06/Grand-Piano-favicon-16-by-16.jpg
+x favicon
 - Media page
     - move .zoom class to img, remove anchor
 
