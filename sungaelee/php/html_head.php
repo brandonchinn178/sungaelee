@@ -52,6 +52,11 @@ function enqueue_scripts() {
                 'single-lectures',
                 $root . 'css/single-lectures.css'
             );
+        } else if ( is_attachment() ) {
+            wp_enqueue_style(
+                'attachment',
+                $root . 'css/attachment.css'
+            );
         }
     } else if ( is_page() ) {
         wp_enqueue_style(

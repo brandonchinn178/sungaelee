@@ -1,11 +1,11 @@
 <?php
     if (current_user_can('edit_posts')) {
-        $permalink = get_edit_post_link($post_id, '&');
+        $permalink = get_edit_post_link(null, '&');
         $edit = "<span class='edit'><a href=$permalink>Edit</a></span>";
     }
 
-    $date = DateTime::createFromFormat('Ymd', get_field('date', $post_id));
-    $title = get_the_title($post_id);
+    $date = DateTime::createFromFormat('Ymd', get_field('date'));
+    $title = get_the_title();
     $description = apply_filters( 'the_content', $post->post_content );
     $category = get_category_by_slug('events');
     $link = get_category_link($category->term_id);

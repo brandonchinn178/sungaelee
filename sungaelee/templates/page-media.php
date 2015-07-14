@@ -6,9 +6,6 @@
     if ( count($posts) == 0 ) {
         echo '<p>No media to display</p>';
     } else {
-        require_once( ABSPATH . WPINC . '/class-oembed.php' );
-        $WP_oEmbed = new WP_oEmbed();
-
         foreach ($posts as $post) {
             $title = $post->post_title;
             $description = $post->post_content;
