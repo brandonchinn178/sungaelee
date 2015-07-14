@@ -1,10 +1,10 @@
 <?php
 
 if ( function_exists('register_field_group') ) {
-    // Date
+    // Event Information
     register_field_group(array(
-        'id' => 'acf_date-field',
-        'title' => 'Date Picker',
+        'id' => 'acf_event-info',
+        'title' => 'Event Information',
         'fields' => array(
             array(
                 'key' => 'field_1',
@@ -27,15 +27,14 @@ if ( function_exists('register_field_group') ) {
             )
         ),
         'options' => array(
-            'position' => 'normal',
-            'layout' => 'no_box'
+            'position' => 'normal'
         )
     ));
 
-    // Video oEmbed
+    // Lecture Video oEmbed
     register_field_group(array(
-        'id' => 'acf_video-oembed',
-        'title' => 'Video Embed',
+        'id' => 'acf_lecture-info',
+        'title' => 'Lecture Information',
         'fields' => array(
             array(
                 'key' => 'field_2',
@@ -56,15 +55,14 @@ if ( function_exists('register_field_group') ) {
             )
         ),
         'options' => array(
-            'position' => 'normal',
-            'layout' => 'no_box'
+            'position' => 'normal'
         )
     ));
 
-    // Sidebar Image
+    // About page sidebar
     register_field_group(array(
-        'id' => 'acf_image-field',
-        'title' => 'Sidebar Image',
+        'id' => 'acf_about-sidebar',
+        'title' => 'About Page Sidebar',
         'fields' => array(
             array(
                 'key' => 'field_3',
@@ -81,7 +79,34 @@ if ( function_exists('register_field_group') ) {
                     'operator' => '==',
                     'value' => get_page_by_path('about')->ID
                 )
+            )
+        ),
+        'options' => array(
+            'position' => 'normal'
+        )
+    ));
+
+    // Home page slideshow
+    register_field_group(array(
+        'id' => 'acf_homepage',
+        'title' => 'Homepage Slideshow',
+        'fields' => array(
+            array(
+                'key' => 'field_4',
+                'label' => 'Image',
+                'name' => 'image',
+                'type' => 'image',
+                'save_format' => 'url'
             ),
+            array(
+                'key' => 'field_5',
+                'label' => 'Slide number',
+                'instructions' => 'Where in the slideshow to put this slide. The slideshow will be ordered lowest to highest.',
+                'name' => 'slide',
+                'type' => 'number'
+            )
+        ),
+        'location' => array(
             array(
                 array(
                     'param' => 'post_category',
@@ -91,8 +116,7 @@ if ( function_exists('register_field_group') ) {
             )
         ),
         'options' => array(
-            'position' => 'normal',
-            'layout' => 'seamless'
+            'position' => 'normal'
         )
     ));
 }
