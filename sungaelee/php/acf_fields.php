@@ -81,6 +81,13 @@ if ( function_exists('register_field_group') ) {
                     'operator' => '==',
                     'value' => get_page_by_path('about')->ID
                 )
+            ),
+            array(
+                array(
+                    'param' => 'post_category',
+                    'operator' => '==',
+                    'value' => get_category_by_slug('slideshow')->term_id
+                )
             )
         ),
         'options' => array(

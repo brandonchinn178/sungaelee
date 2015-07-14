@@ -17,6 +17,7 @@ x Events page calendar: hover on event = show event title
 x favicon
 x Media page
     x move .zoom class to img, remove anchor
+- Move html_head.php to relevant template files
 
 Production
 ==========

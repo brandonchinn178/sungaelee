@@ -65,9 +65,15 @@ wp menu item add-term my-menu category $(
     wp term create category Lectures --description="Lectures" --porcelain
 )
 
+# Slideshow category
+wp term create category Slideshow --description="A post for the home page slideshow"
+
 # spots plugin
 wp plugin install spots --activate
 wp post create --post_type=spot --post_title=Footer --post_content="Dr. Sungae Lee | (123) 456-7890" --post_status=publish
+wp post create --post_type=spot --post_title="Excerpt - Left" --post_content="This is the left excerpt on the home page!" --post_status=publish
+wp post create --post_type=spot --post_title="Excerpt - Center" --post_content="This is the center excerpt on the home page!" --post_status=publish
+wp post create --post_type=spot --post_title="Excerpt - Right" --post_content="This is the right excerpt on the home page!" --post_status=publish
 
 # acf plugin
 wp plugin install advanced-custom-fields --activate

@@ -1,0 +1,37 @@
+.content {
+    padding: 0;
+    // footer
+    padding-bottom: 200px;
+    .slideshow {
+        width: 100%;
+        height: 400px;
+        background: #fdfdfd;
+        $border: 1px solid #f0f0f0;
+        border-top: $border;
+        border-bottom: $border;
+        margin-bottom: 30px;
+        padding: 30px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        .slide {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            padding: 0 300px;
+            img {
+                float: right;
+                height: 100%;
+            }
+        }
+    }
+    .excerpts {
+        font-size: 0;
+        padding: 0 75px;
+        .excerpt {
+            display: inline-block;
+            width: 33%;
+            font-size: initial;
+            text-align: center;
+        }
+    }
+}

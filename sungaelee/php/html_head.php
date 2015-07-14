@@ -10,7 +10,12 @@ function page_title() {
 function enqueue_scripts() {
     $root = get_template_directory_uri() . '/';
 
-    if ( is_category() ) {
+    if ( is_front_page() ) {
+        wp_enqueue_style(
+            'home',
+            $root . 'css/home.css'
+        );
+    } else if ( is_category() ) {
         if ( is_category('events') ) {
             wp_enqueue_script(
                 'moment',
