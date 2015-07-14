@@ -15,8 +15,8 @@ x Events page calendar: hover on event = show event title
     - editable content (spot)
     - category for slideshow posts
 x favicon
-- Media page
-    - move .zoom class to img, remove anchor
+x Media page
+    x move .zoom class to img, remove anchor
 
 Production
 ==========

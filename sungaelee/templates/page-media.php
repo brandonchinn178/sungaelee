@@ -25,12 +25,8 @@
 
             echo(
                 "<div class='media'>
-                    <h2>
-                        <a href='#' class='zoom'>$title</a>
-                    </h2>
-                    <a href='#' class='zoom'>
-                        <img src=$thumbnail_url class='thumbnail'>
-                    </a>
+                    <h2 class='zoom'>$title</h2>
+                    <img src=$thumbnail_url class='thumbnail zoom'>
                     <p class='short-description'>$short_description</p>
                     <div class='focus-container'>
                         <div class='focus'>
