@@ -2,9 +2,14 @@
     get_header();
 
     echo '<div class="slideshow">';
+
     $query = new WP_Query(array(
-        'category_name' => 'slideshow'
+        'category_name' => 'slideshow',
+        'order' => 'ASC',
+        'orderby' => 'meta_value',
+        'meta_key' => 'slide_num'
     ));
+
     while( $query->have_posts() ) {
         $query->the_post();
         $title = get_the_title();

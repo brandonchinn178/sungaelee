@@ -14,6 +14,7 @@
         white-space: nowrap;
         overflow: hidden;
         .slide {
+            position: relative;
             display: inline-block;
             height: 100%;
             width: 100%;
@@ -29,6 +30,7 @@
         padding: 0 75px;
         .excerpt {
             display: inline-block;
+            vertical-align: top;
             width: 33%;
             font-size: initial;
             text-align: center;

@@ -11,6 +11,11 @@ function enqueue_scripts() {
     $root = get_template_directory_uri() . '/';
 
     if ( is_front_page() ) {
+        wp_enqueue_script(
+            'home',
+            $root . 'js/home.js',
+            array('jquery')
+        );
         wp_enqueue_style(
             'home',
             $root . 'css/home.css'

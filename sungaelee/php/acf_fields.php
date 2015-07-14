@@ -102,8 +102,9 @@ if ( function_exists('register_field_group') ) {
                 'key' => 'field_5',
                 'label' => 'Slide number',
                 'instructions' => 'Where in the slideshow to put this slide. The slideshow will be ordered lowest to highest.',
-                'name' => 'slide',
-                'type' => 'number'
+                'name' => 'slide_num',
+                'type' => 'number',
+                'required' => 1
             )
         ),
         'location' => array(
