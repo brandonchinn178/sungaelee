@@ -26,7 +26,7 @@
             $title = get_the_title();
             $permalink = get_permalink();
             $date = DateTime::createFromFormat('Ymd', get_field('date'));
-            $description = apply_filters( 'the_content', $post->post_content );
+            $description = trim_words( $post->post_content, 40 );
 
             echo(
                 "<div class='event' data-permalink='$permalink'>

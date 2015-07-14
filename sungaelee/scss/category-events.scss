@@ -39,5 +39,21 @@
         a {
             color: $theme-white;
         }
+        td {
+            position: relative;
+            .popup {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                white-space: nowrap;
+                padding: 5px 25px;
+                -webkit-transform: translateX(-50%) translateY(-100%);
+                transform: translateX(-50%) translateY(-100%);
+                z-index: 100;
+                background: $theme-white;
+                border: 2px outset #ccc;
+                border-radius: 3px;
+            }
+        }
     }
 }

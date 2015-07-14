@@ -10,6 +10,15 @@ jQuery(document).ready(function($) {
 
     $(".calendar").fullCalendar({
         events: allEvents,
-        height: $(".calendar").height()
+        height: $(".calendar").height(),
+        eventMouseover: function(event, jsEvent) {
+            $("<div>").addClass("popup")
+                        .text(event.title)
+                        .appendTo($(this).parent());
+            console.log(event.backgroundColor);
+        },
+        eventMouseout: function() {
+            $(".calendar .popup").remove();
+        }
     });
 });
