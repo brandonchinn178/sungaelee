@@ -24,3 +24,5 @@ Production
 - Find server
 - Link domain
 - Check file uploads
+- Pretty permalink
+- Docs for Dr. Lee
