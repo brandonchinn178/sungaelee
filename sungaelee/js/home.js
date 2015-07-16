@@ -1,9 +1,10 @@
 var WAIT_TIME = 7; // in seconds
 var SLIDE_TIME = 1; // in seconds
+var OFFSET;
 
 jQuery(document).ready(function($) {
     if ($(".slide").length > 1) {
-        var OFFSET = $(".slideshow").width();
+        OFFSET = $(".slideshow").width();
 
         var nextSlide = function() {
             var first = $(".slide").first();
@@ -29,5 +30,10 @@ jQuery(document).ready(function($) {
         };
 
         setInterval(nextSlide, WAIT_TIME * 1000);
+
+        // if the user resizes the window, update OFFSET
+        $(window).resize(function() {
+            OFFSET = $(".slideshow").width();
+        });
     }
 });

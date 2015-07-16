@@ -18,9 +18,13 @@
 
         echo(
             "<div class='slide'>
-                <img src=$image>
-                <h2>$title</h2>
-                <div class='description'>$description</div>
+                <div class='slide-content'>
+                    <h2>$title</h2>
+                    <div class='description'>$description</div>
+                </div>
+                <div class='image'>
+                    <img src=$image>
+                </div>
             </div>"
         );
     }
