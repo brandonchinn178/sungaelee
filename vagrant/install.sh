@@ -43,4 +43,4 @@ sudo ln -fs /vagrant/sungaelee /web-root/wp-content/themes/sungaelee
 echo -e "\nRestarting apache workers..."
 sudo /etc/init.d/apache2 restart
 
-./setup.sh
+../scripts/setup.sh
