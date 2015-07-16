@@ -1,11 +1,13 @@
 echo -e "\nSetting up production server..."
+cd ~
 
 echo -e "\nDownloading the wordpress command line interface..."
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-chmod +x wp-cli.phar
-mv wp-cli.phar ~/wp-cli.phar
-echo "alias wp='~/wp-cli.phar'" >> ~/.bashrc
-source ~/.bashrc
+if ![ -x "$(command -v wp)" ]; then
+    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    chmod +x wp-cli.phar
+    echo "alias wp='~/wp-cli.phar'" >> .bashrc
+    source .bashrc
+fi
 
 echo -e "\nSetting up site..."
 cd ~/public_html
