@@ -1,5 +1,0 @@
-Production
-==========
-- Docs for Dr. Lee
-    - Website
-    - GoDaddy
