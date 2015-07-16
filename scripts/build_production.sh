@@ -11,3 +11,4 @@ fi
 
 cp -R sungaelee/* production/
 rm -r production/scss
+rm -r production/**/.DS_Store
