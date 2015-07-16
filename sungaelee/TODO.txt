@@ -1,10 +1,5 @@
 Production
 ==========
-
-x rpwilson@godaddy.com
-x Link domain
-- Check file uploads
-x Pretty permalink
 - Docs for Dr. Lee
     - Website
     - GoDaddy
