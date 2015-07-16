@@ -55,7 +55,8 @@ if ( function_exists('register_field_group') ) {
             )
         ),
         'options' => array(
-            'position' => 'normal'
+            'position' => 'normal',
+            'hide_on_screen' => array()
         )
     ));
 
@@ -82,7 +83,8 @@ if ( function_exists('register_field_group') ) {
             )
         ),
         'options' => array(
-            'position' => 'normal'
+            'position' => 'normal',
+            'hide_on_screen' => array()
         )
     ));
 
@@ -117,7 +119,8 @@ if ( function_exists('register_field_group') ) {
             )
         ),
         'options' => array(
-            'position' => 'normal'
+            'position' => 'normal',
+            'hide_on_screen' => array()
         )
     ));
 }
