@@ -10,3 +10,4 @@ if [ ! -d production ]; then
 fi
 
 cp -R sungaelee/* production/
+rm -r production/scss
