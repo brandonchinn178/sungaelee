@@ -21,11 +21,13 @@
                 ?>
                 <div class="login-link">
                     <?php
+                        global $wp;
+                        $current_url = home_url(add_query_arg(array(),$wp->request))
                         if (is_user_logged_in()) {
                             echo '<a href="'. admin_url() . '">Admin Site</a>';
-                            echo '<a href="'. wp_logout_url( get_permalink() ) . '">Logout</a>';
+                            echo '<a href="'. wp_logout_url( $current_url ) . '">Logout</a>';
                         } else {
-                            echo '<a href="'. wp_login_url( get_permalink() ) . '">Login</a>';
+                            echo '<a href="'. wp_login_url( $current_url ) . '">Login</a>';
                         }
                     ?>
                 </div>
